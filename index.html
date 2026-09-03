@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>😂 Random Joke Generator</h1>
+            <p>Get a laugh with random jokes from JokeAPI</p>
+        </header>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="control-group">
+                <label for="categorySelect">Category:</label>
+                <select id="categorySelect">
+                    <option value="any">Any</option>
+                    <option value="general">General</option>
+                    <option value="knock-knock">Knock-Knock</option>
+                    <option value="programming">Programming</option>
+                    <option value="misc">Miscellaneous</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="typeSelect">Type:</label>
+                <select id="typeSelect">
+                    <option value="any">Any</option>
+                    <option value="single">Single</option>
+                    <option value="twopart">Two-Part</option>
+                </select>
+            </div>
+
+            <div class="control-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="safeMode" checked>
+                    Safe Mode
+                </label>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="spinner" id="spinner"></div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage"></div>
+
+        <!-- Joke Display -->
+        <div class="joke-container" id="jokeContainer" style="display: none;">
+            <div class="joke-card">
+                <div class="joke-category" id="jokeCategory"></div>
+                <div class="joke-type" id="jokeType"></div>
+                <div class="joke-content">
+                    <p id="jokeSetup"></p>
+                    <p id="jokePunchline" class="punchline" style="display: none;"></p>
+                </div>
+                <button class="reveal-btn" id="revealBtn" style="display: none;">Reveal Punchline</button>
+                <div class="joke-id" id="jokeId"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="nextJokeBtn">Next Joke 😆</button>
+                <button class="btn btn-secondary" id="copyBtn">Copy Joke 📋</button>
+                <button class="btn btn-secondary" id="shareBtn">Share 🔗</button>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-section" id="historySection" style="display: none;">
+            <div class="history-header">
+                <h3>Joke History</h3>
+                <button class="clear-history-btn" id="clearHistoryBtn">Clear</button>
+            </div>
+            <div class="history-list" id="historyList"></div>
+        </div>
+
+        <!-- Initial CTA -->
+        <div class="cta-section" id="ctaSection">
+            <button class="btn btn-large" id="getJokeBtn">Get Your First Joke 🎉</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
